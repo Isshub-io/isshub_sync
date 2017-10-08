@@ -1,0 +1,20 @@
+[MASTER]
+
+# Will check documentation of parameters and return value in functions and methods
+load-plugins=pylint.extensions.docparams
+
+# Only rules to be disabled
+disable=
+    locally-disabled,  # allow disabling of some checks in code
+    locally-enabled    # and allow re-enabling them after a block, for example
+
+[PARAMETER_DOCUMENTATION]
+# options for the plugin `pylint.extensions.docparams`
+
+# Functions should all have their parameters and return value documented
+accept-no-param-doc=no
+accept-no-return-doc=no
+
+# If functions raise or yields something, it should be documented
+accept-no-raise-doc=no
+accept-no-yields-doc=no
