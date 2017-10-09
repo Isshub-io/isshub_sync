@@ -3,11 +3,11 @@ Isshub Sync
 ===========
 
 
-.. image:: https://travis-ci.org/Isshub-io/isshub_sync.svg?branch=master
-    :target: https://travis-ci.org/Isshub-io/isshub_sync
+.. image:: https://travis-ci.org/Isshub-io/isshub_sync.svg?branch=develop
+    :target: https://travis-ci.org/Isshub-io/isshub_sync?branch=develop
 
-.. image:: https://coveralls.io/repos/github/Isshub-io/isshub_sync/badge.svg?branch=feature%2Ftwidi%2Ftravis-coverall
-    :target: https://coveralls.io/github/Isshub-io/isshub_sync?branch=feature%2Ftwidi%2Ftravis-coverall
+.. image:: https://coveralls.io/repos/github/Isshub-io/isshub_sync/badge.svg?branch=develop
+    :target: https://coveralls.io/github/Isshub-io/isshub_sync?branch=develop
 
 ``isshub_sync`` is a python module to be used in the next version of the core of https://www.isshub.io
 
