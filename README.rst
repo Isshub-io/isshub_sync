@@ -5,9 +5,16 @@ Isshub Sync
 
 .. image:: https://travis-ci.org/Isshub-io/isshub_sync.svg?branch=develop
     :target: https://travis-ci.org/Isshub-io/isshub_sync?branch=develop
+    :alt: Travis
 
 .. image:: https://coveralls.io/repos/github/Isshub-io/isshub_sync/badge.svg?branch=develop
     :target: https://coveralls.io/github/Isshub-io/isshub_sync?branch=develop
+    :alt: Coveralls
+
+.. image:: https://codeclimate.com/github/Isshub-io/isshub_sync/badges/gpa.svg
+   :target: https://codeclimate.com/github/Isshub-io/isshub_sync
+   :alt: Code Climate
+
 
 ``isshub_sync`` is a python module to be used in the next version of the core of https://www.isshub.io
 
