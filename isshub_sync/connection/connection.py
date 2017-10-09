@@ -170,6 +170,34 @@ class Connection:  # pylint: disable=too-few-public-methods
 
         return Callable(self, *args)
 
+    def _finalize_path(self, path: str, path_suffix: OptionalStr = NotProvided) -> str:
+        """Make the given path ready to be used for a request.
+
+        Parameters
+        ----------
+        path : str
+            The path in the request. Must not contain the host. If will be prefixed with "/"
+            if not already done.
+        path_suffix : str, optional
+            A string to be added at the end of the path if not already present.
+            Will default to ``self.PATH_SUFFIX`` if not provided
+
+        Returns
+        -------
+        str
+            The path ready to be requested
+
+        """
+
+        if not path.startswith('/'):
+            path = '/' + path
+
+        _path_suffix: str = self.PATH_SUFFIX if path_suffix is NotProvided else str(path_suffix)
+        if _path_suffix and not path.endswith(_path_suffix):
+            path += _path_suffix
+
+        return path
+
     async def request(  # pylint: disable=too-many-arguments
             self,
             method: str,
@@ -186,7 +214,7 @@ class Connection:  # pylint: disable=too-few-public-methods
             The method to use. Will be lowercased
         path : str
             The path in the request. Must not contain the host. If will be prefixed with "/"
-            if not present.
+            if not already done.
         data : dict, optional
             Data to pass as the body of the request, if set.
         data_mode: DataModes
@@ -196,7 +224,6 @@ class Connection:  # pylint: disable=too-few-public-methods
         path_suffix : str, optional
             A string to be added at the end of the path if not already present.
             Will default to ``self.PATH_SUFFIX`` if not provided
-
 
         Returns
         -------
@@ -210,14 +237,7 @@ class Connection:  # pylint: disable=too-few-public-methods
         if self.client is None:
             self.client = self.DEFAULT_CLIENT_CLASS()
 
-        if not path.startswith('/'):
-            path = '/' + path
-
-        _path_suffix: str = self.PATH_SUFFIX if path_suffix is NotProvided else str(path_suffix)
-        if _path_suffix and not path.endswith(_path_suffix):
-            path += _path_suffix
-
-        url = self.root + path
+        url = self.root + self._finalize_path(path, path_suffix)
 
         kwargs: dict = {}
 
