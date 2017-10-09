@@ -2,6 +2,13 @@
 Isshub Sync
 ===========
 
+
+.. image:: https://travis-ci.org/Isshub-io/isshub_sync.svg?branch=master
+    :target: https://travis-ci.org/Isshub-io/isshub_sync
+
+.. image:: https://coveralls.io/repos/github/Isshub-io/isshub_sync/badge.svg?branch=feature%2Ftwidi%2Ftravis-coverall
+    :target: https://coveralls.io/github/Isshub-io/isshub_sync?branch=feature%2Ftwidi%2Ftravis-coverall
+
 ``isshub_sync`` is a python module to be used in the next version of the core of https://www.isshub.io
 
 It's goal is to synchronize part of the content of repositories of code repositories, like github, gitlab, bitbucket...,
